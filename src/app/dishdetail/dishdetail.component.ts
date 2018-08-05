@@ -3,6 +3,9 @@ import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { switchMap } from 'rxjs/operators';
 
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Feedback, ContactType } from '../shared/feedback';
+
 import { Dish } from '../shared/dish';
 import { Comment } from '../shared/comment';
 import { DishService } from '../services/dish.service';
@@ -21,6 +24,7 @@ export class DishdetailComponent implements OnInit {
   next: number;
   comment: Comment;
   errMess: string;
+  commentForm: FormGroup;
 
   formErrors = {
     'author': '',
@@ -41,6 +45,7 @@ export class DishdetailComponent implements OnInit {
   constructor(private dishservice: DishService,
     private route: ActivatedRoute,
     private location: Location,
+    private fb: FormBuilder,
     @Inject('BaseURL') private BaseURL) { }
 
   ngOnInit() {
@@ -72,13 +77,13 @@ export class DishdetailComponent implements OnInit {
         comment: ['', Validators.required],
       });
       this.commentForm.valueChanges
-                      .subscribe(date => this.onValueChanged(data));
+                      .subscribe(data => this.onValueChanged(data));
       this.onValueChanged();
   }
 
   onValueChanged(data?: any) {
-    if (!this.feedbackForm) { return; }
-    const form = this.feedbackForm;
+    if (!this.commentForm) { return; }
+    const form = this.commentForm;
     for (const field in this.formErrors) {
       if (this.formErrors.hasOwnProperty(field)) {
         this.formErrors[field] = '';
@@ -97,7 +102,7 @@ export class DishdetailComponent implements OnInit {
 
   onSubmit() {
     this.comment = this.commentForm.value;
-    this.comment.date = new Date().toISString();
+    this.comment.date = new Date().toISOString();
     console.log(this.comment);
     this.dishcopy.comments.push(this.comment);
     this.dishcopy.save()
