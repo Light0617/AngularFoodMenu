@@ -29,5 +29,4 @@ export class PromotionService{
                            .getList({featured : true})
                            .pipe(map(promos => promos[0]));
   }
-
 }
