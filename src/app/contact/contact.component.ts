@@ -112,7 +112,8 @@ export class ContactComponent implements OnInit {
         setTimeout(() => {
           this.submittingStatus = false;
           this.submitStatus = false;
-        } 5000);
+        }, 5000)
+      });
     this.feedbackForm.reset({
       firstname: '',
       lastname: '',

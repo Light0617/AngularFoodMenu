@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
 
   constructor(public dialog: MatDialog,
-              @Inject('BaseURL') private BaseURL) { }
+              @Inject('BaseURL') public BaseURL) { }
 
   ngOnInit() {
   }
