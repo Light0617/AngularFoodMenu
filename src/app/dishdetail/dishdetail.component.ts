@@ -123,13 +123,11 @@ export class DishdetailComponent implements OnInit {
     this.dishcopy.save()
       .subscribe(dish => { this.dish = dish; console.log(this.dish); });
     this.commentFormDirective.resetForm();
-    setTimeout(() => {
-      this.commentForm.reset({
-        author: '',
-        rating: 5,
-        comment: ''
-      });
-    } 100);
+    this.commentForm.reset({
+      author: '',
+      rating: 5,
+      comment: ''
+    });
   }
 
 }
