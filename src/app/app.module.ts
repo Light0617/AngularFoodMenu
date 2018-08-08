@@ -39,6 +39,7 @@ import { baseURL } from './shared/baseurl';
 import { RestangularModule, Restangular } from 'ngx-restangular';
 import { RestangularConfigFactory } from './shared/restConfig';
 import { LeaderComponent } from './leader/leader.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { LeaderComponent } from './leader/leader.component';
     HomeComponent,
     ContactComponent,
     LoginComponent,
-    LeaderComponent
+    LeaderComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
