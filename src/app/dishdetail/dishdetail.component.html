@@ -28,11 +28,12 @@
       <mat-card-actions>
         <button mat-button [routerLink]="['/dishdetail', prev]"><span class="fa fa-chevron-left fa-lg"></span></button>
         <button mat-button (click) = "goBack()">BACK</button>
-        <!-- <ng-md-icon icon="favorite"></ng-md-icon>  -->
-        <!-- <mat-icon svgIcon="thumbs-up"></mat-icon> -->
-        <!-- <mat-icon>home</mat-icon> -->
-        <!-- <icon-favorite/> -->
-        <!-- <button mat-button (click) = "changeColor()" [style.color]="isLike ? 'red' : 'black'">LIKE</button> -->
+        <span (click) = "changeStyle()" [hidden] = "!isLike">
+          <i class="material-icons red100" color="#FB8C00">favorite</i>
+        </span>
+        <span (click) = "changeStyle()" [hidden] = "isLike">
+          <i class="material-icons">favorite_border</i>
+        </span>
         <span class="flex-spacer"></span>
         <button mat-button [routerLink]="['/dishdetail', next]"><span class="fa fa-chevron-right fa-lg"></span></button>
       </mat-card-actions>

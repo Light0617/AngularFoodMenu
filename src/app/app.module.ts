@@ -41,6 +41,7 @@ import { RestangularConfigFactory } from './shared/restConfig';
 import { LeaderComponent } from './leader/leader.component';
 import { HighlightDirective } from './directives/highlight.directive';
 
+
 @NgModule({
   declarations: [
     AppComponent,

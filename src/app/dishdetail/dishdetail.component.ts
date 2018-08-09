@@ -5,6 +5,9 @@ import { Location } from '@angular/common';
 import { switchMap } from 'rxjs/operators';
 import { Feedback, ContactType } from '../shared/feedback';
 
+import { MatIconModule } from '@angular/material/icon';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+
 import { Dish } from '../shared/dish';
 import { Comment } from '../shared/comment';
 import { DishService } from '../services/dish.service';
@@ -118,6 +121,10 @@ export class DishdetailComponent implements OnInit {
   }
 
   changeColor(tabclicked): void {
+    this.isLike= !this.isLike;
+  }
+
+  changeStyle(tabclicked): void {
     this.isLike= !this.isLike;
   }
 
