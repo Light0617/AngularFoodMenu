@@ -40,6 +40,8 @@ export class DishdetailComponent implements OnInit {
   newComment: Comment;
   visibility = 'shown';
   isLike: boolean;
+  Arr = Array;
+  num:number = 20;
 
   formErrors = {
     'author': '',

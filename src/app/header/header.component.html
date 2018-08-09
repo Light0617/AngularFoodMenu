@@ -1,8 +1,9 @@
-<mat-toolbar color="primary">
+
+<div class="header">
   <span>
     <img mat-list-avatar src="{{BaseURL}}images/logo.png" height=30 width=30>
   </span>
-  <a mat-button routerLink="/home" routerLinkActive="active">
+  <a mat-button routerLink="/home">
     <span class="fa fa-home fa-lg"></span> Home
   </a>
   <a mat-button routerLink="/aboutus"><span class="fa fa-info fa-lg">
@@ -14,23 +15,22 @@
   <a mat-button routerLink="/contactus">
     <span class="fa fa-address-card fa-lg"></span> Contact
   </a>
-</mat-toolbar>
 
-<div class="container jumbotron"
-    fxLayout="row"
-    fxLayout.sm="column"
-    fxLayout.xs="column"
-    fxLayoutAlign.xs="start center"
-    fxLayoutAlign.sm="start center"
-    fxLayoutAlign.gt-sm="center center"
-    fxLayoutGap="10px">
+  <div
+      fxLayout="row"
+      fxLayout.sm="column"
+      fxLayout.xs="column"
+      fxLayoutAlign.xs="start center"
+      fxLayoutAlign.sm="start center"
+      fxLayoutAlign.gt-sm="center center"
+      fxLayoutGap="10px">
 
-  <div fxFlex fxFlex.gt-sm="50%">
-    <h1>Welcome to Food App</h1>
-    <p>We will explore the best cuisines in Bay Area!</p>
+    <div fxFlex fxFlex.gt-sm="50%">
+      <h1>Welcome to Food App</h1>
+      <p>We will explore the best cuisines in Bay Area!</p>
+    </div>
+    <div fxFlex fxFlex.gt-sm="20%">
+    </div>
+    <div fxFlex></div>
   </div>
-  <div fxFlex fxFlex.gt-sm="20%">
-    <img src="{{BaseURL}}images/logo.png" alt="logo">
-  </div>
-  <div fxFlex></div>
 </div>

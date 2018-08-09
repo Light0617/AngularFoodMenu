@@ -1,7 +1,7 @@
 $lt-gray: #ddd;
-$background-dark: #512DA8;
-$background-light: #9575CD;
-$background-pale: #D1C4E9;
+$background-light: #ae81be;
+$background-dark: #76066c;
+$background-pale: #ae81be;
 $background-moredark: #4527A0;
 
 @mixin zero-margin($pad-up-down, $pad-left-right) {
@@ -16,5 +16,18 @@ $background-moredark: #4527A0;
     min-height: 150px;
 }
 .active {
-    background: $background-moredark;
+    background: $background-dark;
+}
+
+.header{
+  height: 40vh;
+  background-image: linear-gradient(
+  to right bottom,
+      rgba($background-light,0.8),
+      rgba($background-dark,0.8)),
+  url('../../assets/header.jpg');
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0,100% 0, 100% 75vh, 0 100%);
+  //color:floralwhite;
 }
