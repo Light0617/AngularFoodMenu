@@ -28,8 +28,11 @@
       <mat-card-actions>
         <button mat-button [routerLink]="['/dishdetail', prev]"><span class="fa fa-chevron-left fa-lg"></span></button>
         <button mat-button (click) = "goBack()">BACK</button>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
+        <!-- <ng-md-icon icon="favorite"></ng-md-icon>  -->
+        <!-- <mat-icon svgIcon="thumbs-up"></mat-icon> -->
+        <!-- <mat-icon>home</mat-icon> -->
+        <!-- <icon-favorite/> -->
+        <!-- <button mat-button (click) = "changeColor()" [style.color]="isLike ? 'red' : 'black'">LIKE</button> -->
         <span class="flex-spacer"></span>
         <button mat-button [routerLink]="['/dishdetail', next]"><span class="fa fa-chevron-right fa-lg"></span></button>
       </mat-card-actions>
@@ -53,16 +56,20 @@
       </mat-card-header>
 
       <mat-card-content>
-        <mat-list *ngFor="let comment of dish.comments">
+        <mat-list *ngFor="let comment of dish.comments.slice(0,5)">
+          <mat-card>
             <p>{{comment.comment}}</p>
             <p>{{comment.rating}} Stars</p>
-            <p> --{{comment.author}} {{comment.date | date}}</p>
+            <cite> --{{comment.author}} {{comment.date | date}}</cite>
+          </mat-card>
         </mat-list>
         <div *ngIf="commentForm.valid">
-          <hr align=left border-top= 10px dashed #8c8b8b>
-          <p>{{newComment.comment}}</p>
-          <p>{{newComment.rating}} Stars</p>
-          <p> --{{newComment.author}} {{newComment.date | date}}</p>
+          <mat-card>
+            <hr align=left border-top= 10px dashed #8c8b8b>
+            <p>{{newComment.comment}}</p>
+            <p>{{newComment.rating}} Stars</p>
+            <cite> --{{newComment.author}} {{newComment.date | date}}</cite>
+          </mat-card>
         </div>
       </mat-card-content>
 
@@ -87,5 +94,4 @@
       </mat-card-content>
     </mat-card>
   </div>
-
 </div>

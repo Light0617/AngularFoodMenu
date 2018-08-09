@@ -36,6 +36,7 @@ export class DishdetailComponent implements OnInit {
   commentForm: FormGroup;
   newComment: Comment;
   visibility = 'shown';
+  isLike: boolean;
 
   formErrors = {
     'author': '',
@@ -64,7 +65,7 @@ export class DishdetailComponent implements OnInit {
     }
 
   ngOnInit() {
-
+    this.isLike = false;
     this.createForm();
 
     this.dishservice.getDishIds()
@@ -114,6 +115,10 @@ export class DishdetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  changeColor(tabclicked): void {
+    this.isLike= !this.isLike;
   }
 
   onSubmit() {
