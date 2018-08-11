@@ -53,17 +53,19 @@
       </mat-card-header>
 
       <mat-card-content>
-        <mat-list *ngFor="let comment of dish.comments">
-            <p>{{comment.comment}}</p>
-            <p>{{comment.rating}} Stars</p>
-            <p> --{{comment.author}} {{comment.date | date}}</p>
+        <mat-list>
+          <mat-list-item *ngFor="let comment of dish.comments">
+              <h3 matLine>{{comment.comment}}</h3>
+              <h3 matLine>{{comment.rating}} Stars</h3>
+              <h3 matLine> --{{comment.author}} {{comment.date | date}}</h3>
+          </mat-list-item>
+          <mat-list-item *ngIf="commentForm.valid">
+            <hr matLine align=left border-top= 10px dashed #8c8b8b>
+            <h3 matLine>{{newComment.comment}}</h3>
+            <h3 matLine>{{newComment.rating}} Stars</h3>
+            <h3 matLine> --{{newComment.author}} {{newComment.date | date}}</h3>
+          </mat-list-item>
         </mat-list>
-        <div *ngIf="commentForm.valid">
-          <hr align=left border-top= 10px dashed #8c8b8b>
-          <p>{{newComment.comment}}</p>
-          <p>{{newComment.rating}} Stars</p>
-          <p> --{{newComment.author}} {{newComment.date | date}}</p>
-        </div>
       </mat-card-content>
 
       <mat-card-content>
